@@ -1,3 +1,4 @@
+dist: focal
 sudo: required
 services:
   - docker
@@ -15,7 +16,7 @@ deploy:
   env: "Docker-react-1-env"
   bucket_name: "elasticbeanstalk-eu-north-1-365255307003"
   bucket_path: "docker-react-1"
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
   on:
     branch: master
