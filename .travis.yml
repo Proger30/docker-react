@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run -e CI=true docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-north-1"
+  app: "docker-react-1"
+  env: "Docker-react-1-env"
+  bucket_name: "elasticbeanstalk-eu-north-1-365255307003"
+  bucket_path: "docker-react-1"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  on:
+    branch: master
