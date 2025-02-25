@@ -3,6 +3,10 @@ sudo: required
 services:
   - docker
 
+branches:
+  only:
+  - master
+
 before_install:
   - docker build -t docker-react -f Dockerfile.dev .
 
